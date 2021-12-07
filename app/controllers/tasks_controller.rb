@@ -2,6 +2,7 @@ class TasksController < ApplicationController
 
   before_action :set_task, except: [:index, :new, :create]
   # affiche tous les records de la table
+
   def index
    @tasks = Task.all
   end
@@ -37,6 +38,12 @@ class TasksController < ApplicationController
       render :edit
     end
   end
+
+  def destroy
+    @task.destroy
+    redirect_to tasks_path #=> pour afficher toutes les taches la methode set_task et task_params
+  end
+
 
   private # ça va nous servir plus tard
 

@@ -6,4 +6,5 @@ Rails.application.routes.draw do
   get 'tasks/:id', to: 'tasks#show', as: :task #=> selectionne un seul record
   get 'tasks/:id/edit', to: 'tasks#edit', as: :edit_task #=> affiche le formulaire et submit
   patch 'tasks/:id', to: 'tasks#update' #=> modification record existant
+  delete 'tasks/:id', to: 'tasks#destroy' #=> suppression record existant
 end
